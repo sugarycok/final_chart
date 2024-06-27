@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>페이지 2</title>
+    <style>
+        .icon-button {
+            margin: 10px;
+            width: 241px;
+            height: 61px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">뉴욕증권거래소</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <header>
+            <h1>뉴욕증권거래소 관련 주식코드입니다.</h1>
+        </header>
+        <!-- 아이콘 추가 -->
+        <div class="row mt-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector1">IT</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector2">금융(Financials)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector3">커뮤니케이션 서비스(Communication Services)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector4">헬스케어(Health Care)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector5">임의 소비재(Consumer Discretionary)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector6">필수 소비재(Consumer Staples)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector7">부동산(Real Estate)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector8">산업재(Industrials)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector9">에너지(Energy)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector10">유틸리티(Utilities)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector11">소재(Materials)</button>
+            </div>
+        </div>
+        <!-- 관련 정보 -->
+        <div id="info" class="mt-4">
+            <!-- 클릭한 아이콘에 관련된 정보가 여기에 표시될 것입니다 -->
+        </div>
+    </div>
+
+    <script>
+        const iconData = [
+            { id: 'sector1', text: 'ORCL: 오라클\nCRM: 세일즈 포스 닷컴\nACN: 액센츄어\nIBM: 아이비엠\nNOW: 서비스 나우\nFIS: 에프아이에스\nFI: 파이서브\nIT: 가트너\nBR: 브로드릿지 파이낸셜 솔루션즈\nCPAY: 콜페이\nMSI: 모토로라 솔루션즈\nHPE: 휴렛 팩커드 엔터프라이즈\nTDY: 텔레다인 테크놀로지스\nTEL: TE 커넥티비티\nAPH: 암페놀 A주\nFICO: 페어 아이작' },
+            { id: 'sector2', text: 'V: 비자\n MA: 마스터카드\nAXP: 아메리칸 엑스프레스\nCOF: 캐피탈 원 파이낸셜\nDFS: 디스커버 파이낸셜 서비스\nJPM: 제이피모간 체이스\nBAC: 뱅크 오브 아메리카\nWFC: 웰스 파고\nC: CT그룹\nBRK-B: 버크셔 해서웨이\nBRK-A: 버크셔 해서웨이\nHIG: 하트포드 파이낸셜 서비스 그룹\nMS: 모간 스탠리\nGS: 골드만 삭스 그룹\nSCHW: 찰스 슈왑\nRJF: 레이먼드 제임스 파이낸셜\nUSB: US 뱅코프\nPNC: PNC 파이낸셜 서비스 그룹\nTFC: 트루이스트 파이낸셜\nRF: 리전스 파이낸셜\nBLK: 블랙록\nBK: 뱅크 오브 뉴욕 멜론\nAMP: 아메리프라이즈 파이낸셜\nSTT: 스테이트 스트리트\nCB: 처브\n\PGR: 프로그레시브\nTRV: 트래블러스\nALL: 올스테이트\nL: 로우스\nSPGI: S&P 글로벌\nMCO: 무디스\n MSCI: MSCI A주\nICE: 인터컨티넨탈 익스체인지\nMMC: 마시 앤 매클레넌\nAON: 에이온\n AJG: 아서 J 갤러거\nMET: 메트라이프\nAFL: 애플랙\nPRU: 푸르덴셜 파이낸셜\n' },
+            { id: 'sector3', text: 'DIS: 월트 디즈니\nVZ: 버라이존 커뮤니케이션스\nT: AT&T\n' },
+            { id: 'sector4', text: 'JNJ: 존슨앤드존슨\nPFE: 화이자\nLLY: 일라이 릴리\nMRK: 머크\nBMY: 브리스톨-마이어스 스퀴브\nABBV: 애브비\nDHR: 다나허\nTMO: 써모 피셔 사이언티픽\nA: 애질런트 테크놀로지스\nIQV: 아이큐비아 홀딩스\nMTD: 메틀러-토레도 인터내셔널\nLH: 래버러토리 코퍼레이션 오브 아메리카 홀딩스\nCRL: 찰스 리버 래버러토리 인터내셔널\nRVTY: 레비티\nUNH: 유나이티드헬스 그룹\nCVS: CVS 헬스\nELV: 엘리번스 헬스\nCI: 시그나\nHUM: 휴매나\nCNC: 센틴\nABT: 애보트 래버러토리\nMDT: 메드트로닉\nSYK: 스트라이커\nEW: 에드워즈 라이프사이언시스\nBSX: 보스톤 사이언티픽\nBIO: 바이오래드 래보라토리스 Class A\nBDX: 벡톤 디킨슨\nRMD: 레즈메드\nBAX: 박스터 인터내셔널\nWST: 웨스트 파마슈티컬 서비스\nSTE: 스테리스\nTFX: 텔레플렉스\nZTS: 조에티스\nHCA: HCA 헬스케어\n' },
+            { id: 'sector5', text: 'HD: 홈 디포\nLOW: 로우스\nGM: 제너럴 모터스\nMCD: 맥도날드\nCMG: 치폴레 멕시칸 그릴\nDRI: 다든 레스토랑\nNKE: 나이키\nBBY: 베스트 바이\nAZO: 오토존\nCCL: 카니발\nRCL: 로얄 캐리비안 크루즈\n TJX: TJX\nBALL: 볼\nIP: 인터내셔널 페이퍼\nDHI: DR 호튼\nLEN: 레나 A주\nLVS: 라스베가스 샌즈\nVFC: VF코퍼레이션\nRL: 랄프 로렌\nLYV: 라이브 네이션 엔터테인먼트\nYUM: 얌! 브랜드\n'},
+            { id: 'sector6', text: 'WMT: 월마트\nTGT: 타겟\nDG: 달러 제너럴\nPG: 프록터 앤드 갬블\nKO: 코카-콜라\nEL: 에스티 로더\nCL: 콜게이트-팜올리브\nKMB: 킴벌리-클라크\nCLX: 크로락스\nPM: 필립 모리스 인터내셔널\nMO: 알트리아 그룹\nGIS: 제너럴 밀스\nK: 켈로그\nHSY: 허쉬\nSTZ: 컨스텔레이션 브랜드\nBF-B: 브라운 포먼\nADM: 아처-대니얼스-미들랜드\nTSN: 타이슨 푸드\nKR: 크로거\n' },
+            { id: 'sector7', text: 'AMT: 아메리칸 타워\nCCI: 크라운 캐슬\nPLD: 프로로지스\nPSA: 퍼블릭 스토리지\nSPG: 사이먼 프로퍼티 그룹\nO: 리얼티 인컴\nDLR: 디지털 리얼티\nVTR: 벤타스\n' },
+            { id: 'sector8', text: 'MMM: 3M\nGE: GE\nITW: 일리노이 툴 웍스\nETN: 이튼 코프\nEMR: 에머슨 일렉트릭\nTT: 트레인 테크놀로지\nOTIS: 오티스 월드와이드\nPH: 파카-하니핀\nROK: 로크웰 오토메이션\nCMI: 커민스\nAME: 아미텍\nIR: 잉가솔 랜드\nGNRC: 제네락 홀딩스\nDOV: 도버\nRTX: 레이시온 테크놀로지스\nBA: 보잉\nLMT: 록히드 마틴\nNOC: 노스롭 그루먼\nGD: 제너럴 다이내믹스\nLHX: L3해리스 테크놀로지스\nTDG: 트랜스다임 그룹\nUNP: 유니온 퍼시픽\nNSC: 노포크 서던\nUPS: UPS\nFDX: 페덱스\nCAT: 캐터필러\nDE: 디어\nGPN: 글로벌 페이먼츠\nEFX: 에퀴팩스\nWM: 웨이스트 매니지먼트\nRSG: 리퍼블릭 서비스\nLUV: 사우스웨스트 에어라인\nDAL: 델타 에어 라인\nJCI: 존슨 콘트롤즈 인터내셔널\nJ: 제이콥스 솔루션\nSWK: 스탠리 블랙 앤 데커\nCARR: 캐리어 글로벌\nURI: 유나이티드 렌탈\n' },
+            { id: 'sector9', text: 'XOM: 엑슨 모빌\nCVX: 쉐브론\nCOP: 코노코필립스\nEOG: EOG 리소스\nDVN: 데본 에너지\nKMI: 킨더 모건\nMPC: 마라톤 페트롤리움\nSLB: 슐럼버거\n' },
+            { id: 'sector10', text: 'NEE: 넥스트에라 에너지\nDUK: 듀크 에너지\nSO: 서던\nES: 에버소스 에너지\nWEC: WEC 에너지 그룹\nED: 콘솔리데이티드 에디슨\nAEE: 애머런\nEIX: 에디슨 인터내셔널\nCMS: CMS 에너지\nDTE: DTE 에너지\nPPL: PPL\nD: 도미니언 에너지\nSRE: 셈프라 에너지\nFE: 퍼스트에너지\nAWK: 아메리칸 워터 웍스\n' },
+            { id: 'sector11', text: 'SHW: 셔윈-윌리엄즈\nECL: 이콜랩\nPPG: PPG 인더스트리즈\nIFF: 인터내셔널 플레이버 앤 프래그런스\nLYB: 라이온델바젤 인더스트리\nALB: 알버말\nAPD: 에어 프로덕츠 앤 케미컬스\nDD: 듀폰\nCTVA: 코르테바\nVMC: 불칸 머티리얼스\nMLM: 마틴 마리에타 머티리얼스\nFCX: 프리포트-맥모란\n' }
+        ];
+
+        iconData.forEach(icon => {
+            document.getElementById(icon.id).addEventListener('click', function() {
+                document.getElementById('info').innerText = icon.text;
+            });
+        });
+    </script>
+</body>
+</html>

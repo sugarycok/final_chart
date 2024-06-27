@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>페이지 3</title>
+    <style>
+        .icon-button {
+            margin: 10px;
+            width: 241px;
+            height: 61px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">나스닥</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <header>
+            <h1>나스닥 관련 주식코드입니다.</h1>
+        </header>
+        <!-- 아이콘 추가 -->
+        <div class="row mt-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector1">IT</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector2">금융(Financials)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector3">커뮤니케이션 서비스(Communication Services)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector4">헬스케어(Health Care)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector5">임의 소비재(Consumer Discretionary)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector6">필수 소비재(Consumer Staples)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector7">부동산(Real Estate)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector8">산업재(Industrials)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector9">에너지(Energy)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector10">유틸리티(Utilities)</button>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <button type="button" class="btn btn-primary btn-block icon-button" id="sector11">소재(Materials)</button>
+            </div>
+        </div>
+        <!-- 관련 정보 -->
+        <div id="info" class="mt-4">
+            <!-- 클릭한 아이콘에 관련된 정보가 여기에 표시될 것입니다 -->
+        </div>
+    </div>
+
+    <script>
+        const iconData = [
+            { id: 'sector1', text: 'MSFT: 마이크로소프트\nAAPL: 애플\nADBE: 어도비\nSNPS: 시높시스\nVRSN: 베리사인\nFTNT: 포티넷\nNVDA: 엔비디아\nINTC: 인텔\nAVGO: 브로드컴\nTXN: 텍사스 인스트루먼스\nQCOM: 컬컴\nMU: 마이크론 테크놀로지\nADI: 아나로그 디바이스\nAMD: 암드\nNXPI: 세미컨덕터\nXLNX: 자일링스\n MCHP: 마이크로칩 테크놀로지\nINTU: 인튜이트\nADSK: 오토데스크\nCDNS: 케이던스 디자인 시스템즈\nANSS: 앤시스\nCTSH: 코그니전트 테크놀로지 솔루션스\nCSCO: 시스코 시스템즈\nAMAT: 어플라이드 머티리얼즈\nLRCX: 램 리서치\nKLA: 케이엘에이\n TER: 테라다인\n STX: 씨게이트 테크놀로지\nWDC: 웨스턴 디지털\n' },
+            { id: 'sector2', text: 'PYPL: 페이팔 홀딩스\nPFG: 프린서플 파이낸셜 그룹\nFITB: 피프스 써드 뱅코프\nTROW:티로우 프라이스 그룹\nNTRS: 노던 트러스트\nCME: CME그룹\nWTW: 윌리스 타워스 왓슨\n' },
+            { id: 'sector3', text: 'GOOGL: 알파벳 A주(구글)\n GOOG: 알파벳 C주(구글)\nMETA: 메타 플랫폼스(페이스북)\nCMCSA: 컴캐스트\nNFLX: 넷플렉스\nCHTR: 차터 커뮤니케이션스\nPARA: 파라마운트 글로벌 B\nDISH: 디시 네트워크\nTMUS: T-모바일 US\nEA: 일렉트로닉 아츠\nTTWO: 테이크-투 인터랙티브 소프트웨어\n' },
+            { id: 'sector4', text: 'AMGN: 암젠\nGILD: 길리어드 사이언스\nBIIB: 바이오젠\nILMN: 일루미나\nIDXX: 아이덱스 래버러토리\nDXCM: 덱스콤\nALGN: 얼라인 테크놀로지\nISRG: 인튜이티브 서지컬\nHOLX: 홀로직\nMRNA: 모더나 테라퓨틱스\nREGN: 리제네론 파마슈티컬스\nVRTX: 버텍스 파마슈티컬스\nINCY: 인사이트\nWBA: 월그린즈 부츠 얼라이언스\n' },
+            { id: 'sector5', text: 'AMZN: 아마존닷컴\nTSLA: 테슬라\nSBUX: 스타벅스\nORLY: 오라일리 오토모티브\nBKNG: 부킹 홀딩스\nEXPE: 익스피디아 그룹\nROST: 로스 스토어즈\nMAR: 메리어트 인터내셔널\nCZR: 시저 엔터테인먼트\n' },
+            { id: 'sector6', text: 'COST: 코스트코 홀세일\nPEP: 펩시코\nKHC: 크래프트 하인즈\nMDLZ: 몬델리즈 인터내셔널\n' },
+            { id: 'sector7', text: 'EQIX: 에퀴닉스\nSBAC: SBA 커뮤니케이션 A주\n' },
+            { id: 'sector8', text: 'HON: 허니웰 인터내셔널\nROP: 로퍼 테크놀로지\nCSX: CSX\nADP: 오토매틱 데이터 프로세싱\nCTAS: 신타스\nCPRT: 코파트\nVRSK: 베리스크 애널리틱스\nODFL: 올드 도미니언 프레이트 라인\n' },
+            { id: 'sector9', text: 'S&P 500에 상장된 회사가 없습니다.' },
+            { id: 'sector10', text: 'AEP: 아메리칸 일렉트릭 파워\nXEL: 엑셀 에너지\nEXC: 엑셀론\n' },
+            { id: 'sector11', text: 'LIN: 린데\n' }
+        ];
+
+        iconData.forEach(icon => {
+            document.getElementById(icon.id).addEventListener('click', function() {
+                document.getElementById('info').innerText = icon.text;
+            });
+        });
+    </script>
+</body>
+</html>
